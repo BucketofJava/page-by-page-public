@@ -11,7 +11,7 @@ export default function Explore() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [papers, setPapers] = useState([]); // fetched papers
   const [loading, setLoading] = useState(false); // loading state
-  const backendURL="http://127.0.0.1:5000"
+  const backendURL="https://968ee4ce63a7.ngrok-free.app"
   // Simulated fetch/search function
 const fetchPapers = async () => {
   try {
