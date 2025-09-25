@@ -16,7 +16,7 @@ export default function Profile() {
   const { unique_id } = useParams();
 
   useEffect(() => {
-    fetch(`backend_url/profile_new/${unique_id}`)
+    fetch(`http://127.0.0.1:5000/profile_new/${unique_id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

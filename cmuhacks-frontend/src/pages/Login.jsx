@@ -31,7 +31,7 @@ export default function Login() {
                 body: JSON.stringify({ email, password })
             };
 
-            const res = await fetch("backend_url/login_new", requestOptions);
+            const res = await fetch("http://127.0.0.1:5000/login_new", requestOptions);
             const data = await res.json();
 
             if (data["status"] == "SUCCESS") {

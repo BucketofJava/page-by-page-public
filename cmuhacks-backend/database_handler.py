@@ -1,6 +1,7 @@
 import psycopg2
 from pgvector.psycopg2 import register_vector
 import numpy as np
+import os
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 print("Model loaded.")
@@ -9,8 +10,8 @@ def get_db_connection():
     try:
         conn = psycopg2.connect(
             dbname="postgres",
-            user="<username>",
-            password="<password>",
+            user=os.environ["DB_USERNAME"],
+            password=os.environ["DB_PASSWORD"],
             host="paper-database.c5wk0s4e80wd.us-east-2.rds.amazonaws.com",
             port="5432" # Default port
         )

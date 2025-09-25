@@ -9,7 +9,7 @@ import time
 # --- Configuration ---
 # Make sure to set your GOOGLE_API_KEY environment variable.
 # You can get an API key from Google AI Studio: https://aistudio.google.com/app/apikey
-os.environ["GOOGLE_API_KEY"] = "APIKEY"
+
 
 # --- LLM Definition ---
 # Note: The requested 'gemini-2.5-flash' is not yet available.

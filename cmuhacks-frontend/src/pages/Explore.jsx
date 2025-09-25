@@ -11,7 +11,7 @@ export default function Explore() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [papers, setPapers] = useState([]); // fetched papers
   const [loading, setLoading] = useState(false); // loading state
-  const backendURL="backend_url"
+  const backendURL="http://127.0.0.1:5000"
   // Simulated fetch/search function
 const fetchPapers = async () => {
   try {
