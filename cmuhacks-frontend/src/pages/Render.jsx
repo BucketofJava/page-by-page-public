@@ -12,7 +12,7 @@ export default function Render() {
   const [paper, setPaper] = useState(null);
   const [link, setLink]=useState(null);
   const [loading, setLoading] = useState(true);
-  const backendURL="https://968ee4ce63a7.ngrok-free.app"
+  const backendURL="https://6b45702b7e89.ngrok-free.app"
  useEffect(() => {
     // Don't try to fetch if the unique_id isn't available yet
     if (!unique_id) {

@@ -32,7 +32,7 @@ export default function Register() {
         body: JSON.stringify({ username, email, password })
       };
 
-      const res = await fetch("https://968ee4ce63a7.ngrok-free.app", requestOptions);
+      const res = await fetch("https://6b45702b7e89.ngrok-free.app", requestOptions);
       const data = await res.json();
 
       if (data["status"] == "SUCCESS") {

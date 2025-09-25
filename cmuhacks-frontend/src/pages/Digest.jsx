@@ -66,7 +66,7 @@ const Footer = () => (
 export default function Digest() {
   // --- Configuration ---
   const BATCH_SIZE = 1; // How many paper IDs to fetch at a time
-  const backendURL = "https://968ee4ce63a7.ngrok-free.app";
+  const backendURL = "https://6b45702b7e89.ngrok-free.app";
 
   // --- State Management ---
   const [feedData, setFeedData] = useState([]);
