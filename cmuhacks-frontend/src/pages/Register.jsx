@@ -4,9 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
-
 export default function Register() {
-  require('dotenv').config();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +31,7 @@ export default function Register() {
         body: JSON.stringify({ username, email, password })
       };
 
-      const res = await fetch(process.env.BACKEND_URL, requestOptions);
+      const res = await fetch(import.meta.env.VITE_BACKEND_URL, requestOptions);
       const data = await res.json();
 
       if (data["status"] == "SUCCESS") {

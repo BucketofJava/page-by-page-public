@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
 export default function Profile() {
-  require('dotenv').config();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [preferences, setPreferences] = useState([]);
@@ -17,7 +15,7 @@ export default function Profile() {
   const { unique_id } = useParams();
 
   useEffect(() => {
-    fetch(`${process.env.BACKEND_URL}/profile_new/${unique_id}`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/profile_new/${unique_id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

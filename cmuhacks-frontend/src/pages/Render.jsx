@@ -7,14 +7,12 @@ import HighlightTextBox from "../components/PrettyText";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'
 import Cookies from 'js-cookie'
-
 export default function Render() {
-  require('dotenv').config()
   const { unique_id } = useParams(); // grab ID from URL
   const [paper, setPaper] = useState(null);
   const [link, setLink]=useState(null);
   const [loading, setLoading] = useState(true);
-  const backendURL=process.env.BACKEND_URL
+  const backendURL=import.meta.env.VITE_BACKEND_URL;
  useEffect(() => {
     // Don't try to fetch if the unique_id isn't available yet
     if (!unique_id) {

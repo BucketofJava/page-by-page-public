@@ -4,9 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import LoadingSpinner from "../components/LoadingSpinner";
-
 export default function Login() {
-  require('dotenv').config();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -32,7 +30,7 @@ export default function Login() {
                 body: JSON.stringify({ email, password })
             };
 
-            const res = await fetch(process.env.BACKEND_URL, requestOptions);
+            const res = await fetch(import.meta.env.VITE_BACKEND_URL, requestOptions);
             const data = await res.json();
 
             if (data["status"] == "SUCCESS") {

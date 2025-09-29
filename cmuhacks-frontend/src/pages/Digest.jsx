@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import FeedPapers from "../components/FeedPaper";
 import NavBar from "../components/NavBar";
 import Cookies from 'js-cookie'
-
 // --- Helper Components (Previously Imported) ---
 
 // A simple loading spinner component
@@ -65,10 +64,10 @@ const Footer = () => (
 
 
 export default function Digest() {
-  require('dotenv').config()
+  
   // --- Configuration ---
   const BATCH_SIZE = 1; // How many paper IDs to fetch at a time
-  const backendURL = process.env.BACKEND_URL;
+  const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   // --- State Management ---
   const [feedData, setFeedData] = useState([]);
