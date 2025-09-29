@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
+require('dotenv').config();
 export default function Profile() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ export default function Profile() {
   const { unique_id } = useParams();
 
   useEffect(() => {
-    fetch(`https://6b45702b7e89.ngrok-free.app/profile_new/${unique_id}`)
+    fetch(`${process.env.BACKEND_URL}/profile_new/${unique_id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

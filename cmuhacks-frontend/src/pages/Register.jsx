@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
-
+require('dotenv').config();
 export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +32,7 @@ export default function Register() {
         body: JSON.stringify({ username, email, password })
       };
 
-      const res = await fetch("https://6b45702b7e89.ngrok-free.app", requestOptions);
+      const res = await fetch(process.env.BACKEND_URL, requestOptions);
       const data = await res.json();
 
       if (data["status"] == "SUCCESS") {

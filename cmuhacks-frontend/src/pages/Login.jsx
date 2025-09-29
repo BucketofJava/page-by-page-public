@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import LoadingSpinner from "../components/LoadingSpinner";
-
+require('dotenv').config();
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -31,7 +31,7 @@ export default function Login() {
                 body: JSON.stringify({ email, password })
             };
 
-            const res = await fetch("https://6b45702b7e89.ngrok-free.app/login_new", requestOptions);
+            const res = await fetch(process.env.BACKEND_URL, requestOptions);
             const data = await res.json();
 
             if (data["status"] == "SUCCESS") {

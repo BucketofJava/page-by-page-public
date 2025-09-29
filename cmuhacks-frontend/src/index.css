@@ -1,3 +1,4 @@
+@import "tailwindcss";
 /* Animations */
 .fade-in-up {
   opacity: 0;                     /* start invisible */
@@ -1139,6 +1140,13 @@ a{
 }
 .logo-anchor{
   display: flex; align-items: center; gap: 1rem;
+}
+/* Subtle dotted pattern overlay for full-page gradient backgrounds */
+.bg-dots {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px),
+                    radial-gradient(rgba(249, 115, 22, 0.10) 1px, transparent 1px);
+  background-position: 0 0, 16px 16px;
+  background-size: 32px 32px;
 }
 /* Profile Page Styles */
 /* Profile Page Styles */

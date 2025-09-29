@@ -7,12 +7,13 @@ import HighlightTextBox from "../components/PrettyText";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'
 import Cookies from 'js-cookie'
+require('dotenv').config()
 export default function Render() {
   const { unique_id } = useParams(); // grab ID from URL
   const [paper, setPaper] = useState(null);
   const [link, setLink]=useState(null);
   const [loading, setLoading] = useState(true);
-  const backendURL="https://6b45702b7e89.ngrok-free.app"
+  const backendURL=process.env.BACKEND_URL
  useEffect(() => {
     // Don't try to fetch if the unique_id isn't available yet
     if (!unique_id) {

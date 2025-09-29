@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ExplorePaper from "../components/ExplorePaper";
 import LoadingSpinner from "../components/LoadingSpinner";
-
+require('dotenv').config();
 export default function Explore() {
   const [searchTerm, setSearchTerm] = useState(""); // user typing
   const [query, setQuery] = useState(""); // actual search query
@@ -11,7 +11,7 @@ export default function Explore() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [papers, setPapers] = useState([]); // fetched papers
   const [loading, setLoading] = useState(false); // loading state
-  const backendURL="https://6b45702b7e89.ngrok-free.app "
+  const backendURL=process.env.BACKEND_URL;
   // Simulated fetch/search function
 const fetchPapers = async () => {
   try {

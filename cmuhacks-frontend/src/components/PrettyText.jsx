@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../index.css'
+require('dotenv').config()
 // This is the main component for our application.
 // It sets up the overall layout and renders the HighlightableText component.
 export default function HighlightTextBox(props) {
@@ -31,7 +32,7 @@ function HighlightableText(props) {
   const [isTouchSelecting, setIsTouchSelecting] = useState(false);
   const [touchStartIdx, setTouchStartIdx] = useState(null);
   const [touchEndIdx, setTouchEndIdx] = useState(null);
-  const backendURL = "http://127.0.0.1:5000";
+  const backendURL = process.env.BACKEND_URL;
 
   /**
    * This function is triggered when the user releases the mouse button
@@ -260,6 +261,17 @@ function HighlightableText(props) {
     }
   };
 
+  // Alternative mobile selection using browser selection API
+  const handleMobileSelection = () => {
+    const selection = window.getSelection();
+    if (!selection || selection.isCollapsed) return;
+    
+    const selectedText = selection.toString().trim();
+    if (selectedText) {
+      fetchDefinitionFor(selectedText);
+    }
+  };
+
   return (
     <div className="lg:grid lg:grid-cols-12 lg:gap-8 space-y-6 lg:space-y-0">
       {/* Left: Summary / Reader */}
@@ -274,6 +286,7 @@ function HighlightableText(props) {
               onTouchStart={onTouchStartSelect}
               onTouchMove={onTouchMoveSelect}
               onTouchEnd={onTouchEndSelect}
+              onTouchEndCapture={handleMobileSelection}
               className="font-serif text-slate-800 text-lg sm:text-xl leading-relaxed selection:bg-sky-200 selection:text-sky-900 cursor-text max-h-[60vh] lg:max-h-[72vh] overflow-auto pr-1 tracking-wide"
             >
               {tokens.map((tok, i) => {
