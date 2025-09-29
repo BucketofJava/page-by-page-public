@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-require('dotenv').config();
+
 export default function Profile() {
+  require('dotenv').config();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [preferences, setPreferences] = useState([]);
@@ -12,7 +13,7 @@ export default function Profile() {
 
   const [showAllRead, setShowAllRead] = useState(false);
   const [showAllLiked, setShowAllLiked] = useState(false);
-
+  
   const { unique_id } = useParams();
 
   useEffect(() => {

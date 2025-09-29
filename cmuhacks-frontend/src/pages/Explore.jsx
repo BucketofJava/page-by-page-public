@@ -3,8 +3,9 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ExplorePaper from "../components/ExplorePaper";
 import LoadingSpinner from "../components/LoadingSpinner";
-require('dotenv').config();
+
 export default function Explore() {
+  require('dotenv').config();
   const [searchTerm, setSearchTerm] = useState(""); // user typing
   const [query, setQuery] = useState(""); // actual search query
   const [filter, setFilter] = useState("All");

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../index.css'
-require('dotenv').config()
+
 // This is the main component for our application.
 // It sets up the overall layout and renders the HighlightableText component.
 export default function HighlightTextBox(props) {
+  
   return (
     <div className="font-sans">
       <div className="w-full mx-auto">
@@ -16,6 +17,7 @@ export default function HighlightTextBox(props) {
 // This component displays a paragraph of text that can be highlighted.
 // When the user selects text, it sends the selection to a backend for analysis and displays the result.
 function HighlightableText(props) {
+  require('dotenv').config()
   // 'highlightedText' state stores the currently selected text.
   const [highlightedText, setHighlightedText] = useState('');
   // 'apiResponse' stores the analysis from the backend.

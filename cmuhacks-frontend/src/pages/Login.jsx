@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import LoadingSpinner from "../components/LoadingSpinner";
-require('dotenv').config();
+
 export default function Login() {
+  require('dotenv').config();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);

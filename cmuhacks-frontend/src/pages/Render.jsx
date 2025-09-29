@@ -7,8 +7,9 @@ import HighlightTextBox from "../components/PrettyText";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'
 import Cookies from 'js-cookie'
-require('dotenv').config()
+
 export default function Render() {
+  require('dotenv').config()
   const { unique_id } = useParams(); // grab ID from URL
   const [paper, setPaper] = useState(null);
   const [link, setLink]=useState(null);

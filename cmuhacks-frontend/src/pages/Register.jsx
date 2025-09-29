@@ -4,8 +4,9 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
-require('dotenv').config();
+
 export default function Register() {
+  require('dotenv').config();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
